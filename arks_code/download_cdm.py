@@ -12,7 +12,7 @@ class DownloadXML():
         Logs into contentDM with selenium, and exports selected collection
     '''
 
-    def setup(self, filepath):
+    def setup(self, filepath, driver_path):
         """
             Sets up selenium webdriver, and sets options
             Inputs include desired directory filepath.
@@ -26,7 +26,7 @@ class DownloadXML():
             "safebrowsing.enabled": True
         })
 
-        self.driver = webdriver.Chrome(executable_path='chromedriver',
+        self.driver = webdriver.Chrome(executable_path=driver_path,
                                        chrome_options=options)
 
         self.driver.get(
