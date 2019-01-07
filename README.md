@@ -1,7 +1,7 @@
 ARK
 ====
 
-Assists with Iowa State University EZID ARK assignment in contentDM.
+Assigns ARKS to Iowa State University contentDM objects. 
 
 
 Getting Started
