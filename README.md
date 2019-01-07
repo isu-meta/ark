@@ -1,13 +1,13 @@
 ARK
 ====
 
-A jupyter notebook to assist with ARK assignment of contentDM collection.
+Assists with Iowa State University EZID ARK assignment in contentDM.
+
 
 Getting Started
 ----------------
 
-To run this code, you need to have access to a contentDM server, as well as an EZID 
-account. 
+Code requires access to a contentDM server and an EZID account.
 
 Clone the repository and create an anaconda environment.
 
