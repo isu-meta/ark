@@ -26,7 +26,7 @@ class DownloadXML():
             "safebrowsing.enabled": True
         })
 
-        self.driver = webdriver.Chrome(executable_path=r'D:/Users/rwolfsla/Desktop/sphinx_docs/project_code/chromedriver',
+        self.driver = webdriver.Chrome(executable_path=os.path.join(os.getcwd(),'chromedriver'),
                                        chrome_options=options)
 
         self.driver.get(

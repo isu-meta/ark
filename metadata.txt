@@ -1,9 +1,0 @@
-erc.who:Iowa State College
-erc.what:Map of the College Domain
-erc.when:1883
-dc.creator:Iowa State College
-dc.title:Map of the College Domain
-dc.publisher:Iowa State University Library
-dc.date:1883
-_target:http://cdm16001.contentdm.oclc.org/cdm/ref/collection/p16001coll47/id/25
-_profile:dc
