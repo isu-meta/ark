@@ -26,7 +26,7 @@ class DownloadXML():
             "safebrowsing.enabled": True
         })
 
-        self.driver = webdriver.Chrome(executable_path=os.path.join(os.getcwd(),'chromedriver'),
+        self.driver = webdriver.Chrome(executable_path='chromedriver',
                                        chrome_options=options)
 
         self.driver.get(
