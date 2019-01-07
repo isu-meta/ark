@@ -25,8 +25,8 @@ With the environment created, run via jupyter notebook.
 $ jupyter notebook
 ```
 
-Credits
---------
+Dependencies
+-------------
 
 * chromedriver.exe: https://sites.google.com/a/chromium.org/chromedriver/
 * ezid.py: https://ezid.cdlib.org/doc/ezid.py
