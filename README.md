@@ -25,7 +25,9 @@ With the environment created, run via jupyter notebook.
 $ jupyter notebook
 ```
 
-* If you have trouble running batch-download.sh, try the following.
+#### Batch Download
+
+If you have trouble running batch-download.sh, try the following.
 
 ``` {.sourceCode .console}
 $ sudo apt-get install dos2unix
