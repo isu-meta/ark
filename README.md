@@ -41,3 +41,10 @@ Dependencies
 * chromedriver.exe: https://sites.google.com/a/chromium.org/chromedriver/
 * ezid.py: https://ezid.cdlib.org/doc/ezid.py
 * batch-download.sh: https://ezid.cdlib.org/doc/batch-download.sh
+
+
+Documentation
+--------------
+
+https://mddocs.readthedocs.io/en/latest/arks.html
+
