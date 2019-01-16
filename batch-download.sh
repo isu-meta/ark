@@ -39,9 +39,13 @@ username="$1"; shift
 password="$1"; shift
 args=()
 for a in "$@"; do
+# add a '-d' before each parameter so that they are passed to the
+# EZID API and joined on an ampersand.
   args+=("-d")
   args+=("$a")
 done
+# curl args -sS means -s: run silently without showing progress bar
+# but -S do show errors. -u is for username & password
 s="$(curl -sS -u "$username:$password" "${args[@]}" $url)"
 if [ $? -ne 0 -o "${s:0:9}" != "success: " ]; then
   echo "$s"
@@ -50,12 +54,20 @@ if [ $? -ne 0 -o "${s:0:9}" != "success: " ]; then
 fi
 
 echo -n "waiting.."
+#success
 url=${s:9:${#s}}
 file=${url##*/}
 status=22
+# curl exit status 22 means HTTP page not retrieved. The requested url
+# was not found or returned another error with the HTTP error code being
+# 400 or above. This return code only appears if -f, --fail is used.
 while [ $status -eq 22 ]; do
   echo -n "."
   sleep 5
+  # curl args: -f indicates fail silently on server errors. -O tells curl
+  # to write request output to a file in the current directory with the
+  # same name as the file we're downloading. Overwrites existing files. -s
+  # indicates don't show progress bar.
   curl -f -O -s $url
   status=$?
 done
