@@ -1,0 +1,9 @@
+**/*.gz
+**/*.xml
+**/*.xlsx
+
+**/*.bak
+**/__pycache__
+**/*.log
+env
+.ipynb_checkpoints
