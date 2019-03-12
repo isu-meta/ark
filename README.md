@@ -32,7 +32,7 @@ In Jupyter Notebook, open "cdm_script.ipynb."
 To download a list of current ARKs, in the Command Prompt, run:
 
 ``` {.sourceCode .console}
-> python batch_download.py <username> <password> format=xml type=ark
+> python batch_download.py <username> <password> format=xml type=ark compression=zip
 ```
 
 Dependencies
