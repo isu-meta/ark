@@ -39,6 +39,8 @@ class DownloadXML():
 
         self.driver.implicitly_wait(10)
 
+        self.collections = self.get_cdm_collections()
+
     def select_and_export(self, collection_number):
         '''
             Selects and Export by collection number
@@ -79,8 +81,21 @@ class DownloadXML():
             By.XPATH, "//a[@id='acolls' and @title='collections']")
         collections_tab.click()
 
+    def get_cdm_collections(self):
+        self.driver.get("https://server16001.contentdm.oclc.org/cgi-bin/admin/collections.exe")
+
+        options = self.driver.find_elements_by_xpath("//select/option")
+
+        collections = [o.get_attribute("value") for o in options]
+
+
+        return collections
+
         
 def cdm_collections():
+    """DEPRECATED! Use DownloadXML.get_cdm_collections() to generate a list
+    of current collections."""
+
     collections = [
     "/p16001coll16",
     "/p16001coll13",
