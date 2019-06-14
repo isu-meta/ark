@@ -164,7 +164,7 @@ def issueRequest (path, method, data=None, returnHeaders=False,
   if data:
     request.headers = {"Content-Type": "text/plain; charset=UTF-8"}
     request.data = data.encode("utf-8")
-  if _cookie: request.header["Cookie"] = _cookie
+  if _cookie: request.headers["Cookie"] = _cookie
   try:
     connection = _opener.open(request)
     if streamOutput:
