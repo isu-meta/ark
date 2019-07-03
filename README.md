@@ -24,7 +24,7 @@ With the environment created, run via jupyter notebook.
 
 In Jupyter Notebook, open "cdm_script.ipynb."
 
-### Batch Download
+## Batch Download
 
 To download a list of current ARKs, in the Command Prompt, run:
 
