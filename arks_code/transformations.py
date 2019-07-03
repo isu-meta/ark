@@ -1,10 +1,12 @@
 from lxml import etree
 
+
 def dctohtml():
-    '''
+    """
         Converts ContentDM's Dublin Core records into html
-    '''
-    xslt_root = etree.XML('''\
+    """
+    xslt_root = etree.XML(
+        """\
     <xsl:stylesheet version="1.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -48,17 +50,19 @@ def dctohtml():
         </xsl:for-each>
     </xsl:template>
     </xsl:stylesheet>
-    ''')
-
+    """
+    )
 
     return etree.XSLT(xslt_root)
-    
+
+
 def formatupload(collection_number):
-    '''
+    """
         * Removes all test records with improper shoulder
         * formats transformation with collection number
-    '''
-    xslt_root = etree.XML('''\
+    """
+    xslt_root = etree.XML(
+        """\
     <xsl:stylesheet version="1.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xml:output indent="yes" />
@@ -92,16 +96,20 @@ def formatupload(collection_number):
         </xsl:for-each>
     </xsl:template>
     </xsl:stylesheet>
-    '''.format(collection_number))
+    """.format(
+            collection_number
+        )
+    )
 
     return etree.XSLT(xslt_root)
-    
+
 
 def formatxmltodict():
-    '''
+    """
         * The transformation for xml to python dictionary
-    '''
-    xslt_root = etree.XML('''\
+    """
+    xslt_root = etree.XML(
+        """\
     <xsl:stylesheet version="1.0"
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
         <xsl:strip-space elements="*" />
@@ -130,30 +138,31 @@ def formatxmltodict():
             <xsl:text>}</xsl:text>
         </xsl:template>
     </xsl:stylesheet>
-    ''')
+    """
+    )
 
     return etree.XSLT(xslt_root)
 
 
 def remove_nan(x):
-    if str(x) == 'nan':
-        return 'undated'
+    if str(x) == "nan":
+        return "undated"
     else:
         return x
 
 
 def remove_xml_encoding(x):
-    '''
+    """
         Function to remove XML encoding
-    '''
-    xml_rem = {('&quot;','"'),
-               ('&apos;',"'"),
-               ('&gt;', '>'),
-               ('&lt;', '<'),
-               ('&amp;', '&')}
+    """
+    xml_rem = {
+        ("&quot;", '"'),
+        ("&apos;", "'"),
+        ("&gt;", ">"),
+        ("&lt;", "<"),
+        ("&amp;", "&"),
+    }
     for tup in xml_rem:
         x = x.replace(tup[0], tup[1])
-        
+
     return x
-            
-            
